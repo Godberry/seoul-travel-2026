@@ -1,26 +1,211 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Scrapbook palette */
+  --bg-cream: #f5efe0;
+  --bg-cream-dark: #ebe4d3;
+  --card-yellow: #fdf6e3;
+  --card-green: #e8f0e1;
+  --card-mint: #d8eadb;
+  --card-pink: #fce8ec;
+  --card-blue: #e3edf7;
+  --card-lavender: #ece3f0;
+  --text-dark: #3d3832;
+  --text-muted: #6b6460;
+  --accent-red: #d85d56;
+  --accent-blue: #4b6296;
+  --accent-orange: #e8945a;
+  --tape-mint: #b8d8be;
+  --tape-pink: #f0c4ca;
+  --tape-blue: #a8c8e8;
+  --tape-yellow: #f0e4a8;
+  --tape-lavender: #c8b8d8;
+  --timeline-line: #c8bfb0;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-bg-cream: var(--bg-cream);
+  --color-bg-cream-dark: var(--bg-cream-dark);
+  --color-card-yellow: var(--card-yellow);
+  --color-card-green: var(--card-green);
+  --color-card-mint: var(--card-mint);
+  --color-card-pink: var(--card-pink);
+  --color-card-blue: var(--card-blue);
+  --color-card-lavender: var(--card-lavender);
+  --color-text-dark: var(--text-dark);
+  --color-text-muted: var(--text-muted);
+  --color-accent-red: var(--accent-red);
+  --color-accent-blue: var(--accent-blue);
+  --color-accent-orange: var(--accent-orange);
+  --color-tape-mint: var(--tape-mint);
+  --color-tape-pink: var(--tape-pink);
+  --color-tape-blue: var(--tape-blue);
+  --color-tape-yellow: var(--tape-yellow);
+  --color-tape-lavender: var(--tape-lavender);
+  --color-timeline-line: var(--timeline-line);
+  --font-heading: var(--font-fredoka);
+  --font-body: var(--font-noto-sans-tc);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-cream);
+  color: var(--text-dark);
+  font-family: var(--font-body), "Noto Sans TC", sans-serif;
+}
+
+/* Paper card base */
+.paper-card {
+  position: relative;
+  border-radius: 4px;
+  padding: 1.5rem;
+  box-shadow:
+    2px 3px 8px rgba(0, 0, 0, 0.08),
+    0 1px 2px rgba(0, 0, 0, 0.04);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.paper-card:hover {
+  box-shadow:
+    3px 5px 14px rgba(0, 0, 0, 0.12),
+    0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* Washi tape */
+.washi-tape {
+  position: absolute;
+  height: 22px;
+  border-radius: 1px;
+  opacity: 0.75;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.washi-tape::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 4px,
+    rgba(255, 255, 255, 0.2) 4px,
+    rgba(255, 255, 255, 0.2) 8px
+  );
+  border-radius: 1px;
+}
+
+/* Pill header (行程總覽 style) */
+.pill-header {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+/* Timeline styles */
+.timeline-line {
+  position: absolute;
+  left: 1.25rem;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--timeline-line),
+    var(--timeline-line) 8px,
+    transparent 8px,
+    transparent 14px
+  );
+  border-radius: 2px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: calc(1.25rem - 5px);
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 3px solid var(--accent-red);
+  background: var(--bg-cream);
+  z-index: 2;
+}
+
+/* Checkbox custom */
+.scrapbook-checkbox {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--accent-blue);
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.scrapbook-checkbox:checked {
+  background: var(--accent-blue);
+  border-color: var(--accent-blue);
+}
+
+.scrapbook-checkbox:checked::after {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Scroll animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-up {
+    animation: none;
+    opacity: 1;
+  }
+  .paper-card:hover {
+    transform: none !important;
+  }
+}
+
+/* Navbar */
+.nav-link {
+  position: relative;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  color: var(--text-dark);
+}
+
+.nav-link:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.nav-link.active {
+  background: var(--accent-blue);
+  color: white;
 }
