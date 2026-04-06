@@ -3,6 +3,7 @@ import { PillHeader } from "../components/PillHeader";
 import { PaperCard } from "../components/PaperCard";
 import { WashiTape } from "../components/WashiTape";
 import { InfoCard } from "../components/InfoCard";
+import { withBasePath } from "../lib/base-path";
 import {
   Plane,
   Hotel,
@@ -150,7 +151,7 @@ export default function FlightHotelPage() {
           {/* Hotel illustration */}
           <div className="rounded-lg overflow-hidden shadow-sm my-3">
             <Image
-              src="/images/real-hotel.jpg"
+              src={withBasePath("/images/real-hotel.jpg")}
               alt="GLAD MAPO 飯店真實照片"
               width={800}
               height={450}

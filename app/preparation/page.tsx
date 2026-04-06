@@ -4,6 +4,7 @@ import { PaperCard } from "../components/PaperCard";
 import { WashiTape } from "../components/WashiTape";
 import { ChecklistItem } from "../components/ChecklistItem";
 import { InfoCard } from "../components/InfoCard";
+import { withBasePath } from "../lib/base-path";
 import {
   ClipboardList,
   Smartphone,
@@ -68,7 +69,7 @@ export default function PreparationPage() {
       {/* Travel prep illustration */}
       <div className="mt-6 max-w-sm mx-auto">
         <Image
-          src="/images/travel-prep.png"
+          src={withBasePath("/images/travel-prep.png")}
           alt="旅行準備物品水彩插畫"
           width={500}
           height={500}

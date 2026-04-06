@@ -7,6 +7,7 @@ import { DayHeader } from "../../components/DayHeader";
 import { TimelineItem } from "../../components/TimelineItem";
 import { InfoCard } from "../../components/InfoCard";
 import { ItineraryList } from "../../components/ItineraryList";
+import { withBasePath } from "../../lib/base-path";
 import {
   MapPin,
   UtensilsCrossed,
@@ -114,7 +115,7 @@ function Day1Content() {
         {/* BBQ illustration */}
         <div className="rounded-lg overflow-hidden shadow-sm mb-3">
           <Image
-            src="/images/real-bbq.jpg"
+            src={withBasePath("/images/real-bbq.jpg")}
             alt="Ggupdang 烤肉真實照片"
             width={800}
             height={450}
@@ -152,7 +153,7 @@ function Day1Content() {
         {/* Seongsu cafe illustration */}
         <div className="rounded-lg overflow-hidden shadow-sm mb-3">
           <Image
-            src="/images/real-cafe.jpg"
+            src={withBasePath("/images/real-cafe.jpg")}
             alt="聖水洞咖啡街真實照片"
             width={800}
             height={450}
@@ -218,7 +219,7 @@ function Day2Content() {
         {/* Gyeongbokgung illustration */}
         <div className="rounded-lg overflow-hidden shadow-sm mb-3">
           <Image
-            src="/images/real-palace.jpg"
+            src={withBasePath("/images/real-palace.jpg")}
             alt="景福宮真實照片"
             width={800}
             height={450}
@@ -271,7 +272,7 @@ function Day2Content() {
       {/* Gwangjang Market image */}
       <div className="rounded-xl overflow-hidden shadow-md">
         <Image
-          src="/images/real-market.jpg"
+          src={withBasePath("/images/real-market.jpg")}
           alt="廣藏市場真實照片"
           width={800}
           height={500}

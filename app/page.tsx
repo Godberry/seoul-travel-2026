@@ -5,6 +5,7 @@ import { WashiTape } from "./components/WashiTape";
 import { DayHeader } from "./components/DayHeader";
 import { PillHeader } from "./components/PillHeader";
 import { ItineraryList } from "./components/ItineraryList";
+import { withBasePath } from "./lib/base-path";
 import {
   Plane,
   Hotel,
@@ -28,7 +29,7 @@ export default function Home() {
         {/* Hero illustration */}
         <div className="mt-6 max-w-3xl mx-auto w-full">
           <Image
-            src="/images/seoul-hero.png"
+            src={withBasePath("/images/seoul-hero.png")}
             alt="首爾城市水彩插畫，南山塔、韓屋、櫻花與飛機"
             width={1200}
             height={675}
@@ -77,7 +78,7 @@ export default function Home() {
             {/* Day 1 preview image */}
             <div className="my-3 rounded-lg overflow-hidden shadow-sm">
               <Image
-                src="/images/airport-arrival.png"
+                src={withBasePath("/images/airport-arrival.png")}
                 alt="仁川機場抵達水彩插畫"
                 width={400}
                 height={200}
@@ -113,7 +114,7 @@ export default function Home() {
             {/* Day 2 preview image */}
             <div className="my-3 rounded-lg overflow-hidden shadow-sm">
               <Image
-                src="/images/gyeongbokgung.png"
+                src={withBasePath("/images/gyeongbokgung.png")}
                 alt="景福宮韓服水彩插畫"
                 width={400}
                 height={200}
