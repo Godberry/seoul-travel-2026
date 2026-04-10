@@ -40,7 +40,7 @@ export default function FlightHotelPage() {
                 <span className="font-semibold">日期：</span>2026/04/24（五）
               </p>
               <p>
-                <span className="font-semibold">航線：</span>桃園 TPE → 仁川 ICN
+                <span className="font-semibold">航線：</span>桃園 TPE（第二航廈） → 仁川 ICN（第一航廈）
               </p>
               <p>
                 <span className="font-semibold">航班：</span>長榮航空 BR170
@@ -77,7 +77,7 @@ export default function FlightHotelPage() {
                 <span className="font-semibold">日期：</span>2026/04/28（二）
               </p>
               <p>
-                <span className="font-semibold">航線：</span>仁川 ICN → 桃園 TPE
+                <span className="font-semibold">航線：</span>仁川 ICN（第一航廈） → 桃園 TPE（第二航廈）
               </p>
               <p>
                 <span className="font-semibold">航班：</span>長榮航空 BR159

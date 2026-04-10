@@ -737,8 +737,8 @@ function Day5Content() {
           <TimelineItem time="12:00" title="弘大逛逛">
             <p>最後的逛街採購時間！</p>
           </TimelineItem>
-          <TimelineItem time="13:00" title="中餐：甜蜜蜜">
-            <p>中式餐廳，吃頓暖心的午餐</p>
+          <TimelineItem time="13:00" title="甜蜜蜜 (Tian Mi Mi) - 弘大店">
+            <p>《黑白大廚》點心女王鄭智善的餐廳</p>
           </TimelineItem>
           <TimelineItem time="~16:00" title="回飯店拿行李">
             <p>搭機場快線前往仁川機場</p>
@@ -762,7 +762,7 @@ function Day5Content() {
           {/* Hongdae illustration */}
           <div className="w-full md:w-1/2 rounded-lg overflow-hidden shadow-sm shrink-0">
             <Image
-              src={withBasePath("/images/hongdae-street.png")}
+              src={withBasePath("/images/hongdae-street.jpg")}
               alt="弘大商圈水彩插畫"
               width={800}
               height={450}
@@ -781,14 +781,32 @@ function Day5Content() {
       <PaperCard color="green" rotation={-0.8} delay={0.25}>
         <WashiTape color="yellow" position="top-left" width="w-14" />
         <div className="flex items-center gap-2 mb-3">
-          <Soup className="w-5 h-5 text-accent-orange" />
+          <UtensilsCrossed className="w-5 h-5 text-accent-orange" />
           <h3 className="font-heading font-bold text-base text-accent-orange">
-            中餐廳：甜蜜蜜 🍲
+            甜蜜蜜 (Tian Mi Mi) - 弘大店
           </h3>
         </div>
-        <p className="text-sm text-text-muted leading-relaxed">
-          在首爾吃一頓中式料理！甜蜜蜜是弘大附近受歡迎的中餐廳，旅行最後一天來碗熱騰騰的湯麵或炒飯，暖暖胃再出發去機場。
-        </p>
+        <div className="flex flex-col md:flex-row gap-4 mb-2">
+          {/* Restaurant image */}
+          <div className="w-full md:w-1/2 rounded-lg overflow-hidden shadow-sm shrink-0">
+            <Image
+              src={withBasePath("/images/sweet-honey-korea.jpg")}
+              alt="甜蜜蜜真實照片"
+              width={800}
+              height={450}
+              className="w-full h-44 md:h-full object-cover min-h-[160px]"
+            />
+          </div>
+          <div className="w-full md:w-1/2 text-sm text-text-muted leading-relaxed flex flex-col justify-center space-y-2">
+            <p>
+              由《黑白大廚》中的「點心女王」鄭智善主廚經營。這家店主打各式港式點心，與一般的韓式中華料理（炸醬麵、糖醋肉）不同。
+            </p>
+            <div className="bg-white/60 rounded-lg p-3">
+              <p className="font-semibold text-xs text-text-muted mb-1">小提醒</p>
+              <p>適合喜愛輕食或港式點心的旅客，推薦作為登機前的最後一餐！</p>
+            </div>
+          </div>
+        </div>
       </PaperCard>
 
       {/* Departure info */}

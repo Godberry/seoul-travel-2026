@@ -14,6 +14,7 @@ import {
   Zap,
   Bus,
   TrainFront,
+  CreditCard,
 } from "lucide-react";
 
 const preTripTasks = [
@@ -79,13 +80,14 @@ export default function PreparationPage() {
       <PillHeader>行前準備</PillHeader>
 
       {/* Travel prep illustration */}
-      <div className="mt-6 max-w-sm mx-auto">
+      <div className="mt-6 max-w-3xl mx-auto w-full">
         <Image
           src={withBasePath("/images/travel-prep.png")}
           alt="旅行準備物品水彩插畫"
-          width={500}
-          height={500}
-          className="rounded-2xl shadow-md"
+          width={1200}
+          height={675}
+          className="rounded-2xl shadow-lg w-full h-auto object-cover"
+          priority
         />
       </div>
 
@@ -104,6 +106,35 @@ export default function PreparationPage() {
             ))}
           </div>
         </PaperCard>
+
+        <InfoCard
+          title="WOWPASS 桃園機場領取資訊（需先在 KKday 購買）"
+          icon={<CreditCard className="w-4 h-4 text-accent-blue" />}
+        >
+          <div className="space-y-2 mt-1">
+            <p className="font-semibold text-accent-red">📍 桃園機場第二航廈</p>
+            <ul className="space-y-1.5 text-sm text-text-dark">
+              <li className="flex items-start gap-2">
+                <span className="text-accent-orange font-bold mt-0.5 shrink-0">•</span>
+                <span><span className="font-semibold">領取地點：</span>Ezfly飛買家櫃檯（3樓航空9號櫃台對面、臺灣銀行旁）</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-accent-orange font-bold mt-0.5 shrink-0">•</span>
+                <span><span className="font-semibold">領取時間：</span>每日 05:30-23:00</span>
+              </li>
+            </ul>
+            <div className="pt-2">
+              <a
+                href="https://www.kkday.com/zh-tw/product/18161-t-money-public-transit-card-pick-up-at-taiwan-taoyuan-international-airport-south-korea?srsltid=AfmBOoqEtFUuVoStSNXM-qlJA0ZpdrPUY2pRdCh_MmwT6u2ZQlb1NZfx"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center text-xs font-medium bg-accent-blue text-white px-3.5 py-2 rounded shadow-sm hover:opacity-90 transition-opacity"
+              >
+                前往 KKday 購買連結
+              </a>
+            </div>
+          </div>
+        </InfoCard>
       </section>
 
       {/* Recommended apps */}
@@ -237,7 +268,9 @@ export default function PreparationPage() {
               <li className="font-semibold text-text-dark">
                 不能帶飲料上車！手拿飲料可能會被趕下車
               </li>
-              <li>禁止攜帶 20 吋以上行李</li>
+              <li className="text-accent-red font-semibold">
+                公車禁止攜帶行李上車（非常嚴格）
+              </li>
               <li>搭車前先確認交通卡餘額（不能賒帳）</li>
               <li className="text-accent-red font-semibold">
                 高峰時段：早上 7:30～9:00、晚上 17:30～19:30（非常擁擠）
@@ -258,9 +291,19 @@ export default function PreparationPage() {
               <li>電梯主要提供老弱婦孺使用</li>
             </ul>
           </InfoCard>
+        </div>
+      </section>
 
+      {/* Preparation notices - Power */}
+      <section className="mt-10 space-y-6">
+        <h2 className="font-heading text-xl font-bold text-accent-blue flex items-center gap-2">
+          <Zap className="w-5 h-5" />
+          生活注意事項
+        </h2>
+
+        <div className="space-y-4">
           <InfoCard
-            title="電壓 & 插頭"
+            title="電壓 & 萬用轉接頭"
             icon={<Zap className="w-4 h-4 text-accent-orange" />}
             variant="warning"
           >
