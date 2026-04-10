@@ -80,7 +80,7 @@ export default function FlightHotelPage() {
                 <span className="font-semibold">航線：</span>仁川 ICN → 桃園 TPE
               </p>
               <p>
-                <span className="font-semibold">航班：</span>中華航空 BR159
+                <span className="font-semibold">航班：</span>長榮航空 BR159
               </p>
               <div className="flex gap-4 mt-2">
                 <div className="bg-white/60 rounded-lg px-3 py-2 text-center flex-1">

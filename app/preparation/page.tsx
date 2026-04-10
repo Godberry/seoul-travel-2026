@@ -33,18 +33,30 @@ const apps = [
   {
     name: "Naver Map",
     desc: "主要導航、標記地點",
+    icon: "/images/navermap.png",
+    iosLink: "https://apps.apple.com/tw/app/naver-map-navigation/id311867728",
+    androidLink: "https://play.google.com/store/apps/details?id=com.nhn.android.nmap",
   },
   {
     name: "Papago",
     desc: "拍照與語音翻譯，自然度高",
+    icon: "/images/papago.png",
+    iosLink: "https://apps.apple.com/tw/app/naver-papago-ai-translator/id1147874819",
+    androidLink: "https://play.google.com/store/apps/details?id=com.naver.labs.translator",
   },
   {
-    name: "wowpass",
+    name: "WOWPASS",
     desc: "搭配卡片使用，可儲值與查餘額",
+    icon: "/images/wowpass.png",
+    iosLink: "https://apps.apple.com/tw/app/wowpass-cashless-pay-in-korea/id1625032544",
+    androidLink: "https://play.google.com/store/apps/details?id=com.orange.wowpass",
   },
   {
     name: "韓巢地圖",
     desc: "有簡體中文介面的韓國地圖",
+    icon: "/images/hanchao.png",
+    iosLink: "https://apps.apple.com/tw/app/hanchao-map/id1315893111",
+    androidLink: "https://play.google.com/store/apps/details?id=com.hanchao.map",
   },
 ];
 
@@ -111,10 +123,49 @@ export default function PreparationPage() {
               rotation={[1, -1.5, 0.8, -0.5][i % 4]}
               delay={0.05 + i * 0.08}
             >
-              <h3 className="font-heading font-bold text-base text-accent-red">
-                {app.name}
-              </h3>
-              <p className="text-sm text-text-muted mt-1">{app.desc}</p>
+              <div className="flex items-start gap-4">
+                {app.icon && (
+                  <div className="shrink-0 pt-0.5">
+                    <Image
+                      src={withBasePath(app.icon)}
+                      alt={`${app.name} icon`}
+                      width={52}
+                      height={52}
+                      className="rounded-[14px] shadow-sm bg-white"
+                    />
+                  </div>
+                )}
+                <div>
+                  <h3 className="font-heading font-bold text-base text-accent-red">
+                    {app.name}
+                  </h3>
+                  <p className="text-sm text-text-muted mt-1 leading-snug">{app.desc}</p>
+                  {(app.iosLink || app.androidLink) && (
+                    <div className="flex flex-wrap gap-2 mt-2.5">
+                      {app.iosLink && (
+                        <a
+                          href={app.iosLink}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center text-[11px] font-medium bg-white/70 hover:bg-white text-slate-600 px-2 py-1 rounded transition-colors shadow-sm"
+                        >
+                          App Store
+                        </a>
+                      )}
+                      {app.androidLink && (
+                        <a
+                          href={app.androidLink}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center text-[11px] font-medium bg-white/70 hover:bg-white text-slate-600 px-2 py-1 rounded transition-colors shadow-sm"
+                        >
+                          Google Play
+                        </a>
+                      )}
+                    </div>
+                  )}
+                </div>
+              </div>
             </PaperCard>
           ))}
         </div>
