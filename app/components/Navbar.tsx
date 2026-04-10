@@ -11,6 +11,9 @@ const links = [
   { href: "/preparation", label: "行前準備" },
   { href: "/day/1", label: "Day 1" },
   { href: "/day/2", label: "Day 2" },
+  { href: "/day/3", label: "Day 3" },
+  { href: "/day/4", label: "Day 4" },
+  { href: "/day/5", label: "Day 5" },
 ];
 
 export function Navbar() {

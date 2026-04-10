@@ -13,6 +13,9 @@ import {
   MapPin,
   ShoppingBag,
   UtensilsCrossed,
+  Sparkles,
+  Bath,
+  Luggage,
 } from "lucide-react";
 
 export default function Home() {
@@ -138,41 +141,101 @@ export default function Home() {
           </PaperCard>
         </Link>
 
-        {/* Day 3 placeholder */}
-        <PaperCard color="mint" rotation={-0.8} delay={0.25}>
-          <WashiTape color="blue" position="top-center" width="w-16" />
-          <DayHeader day={3} date="04/26（日）" subtitle="待安排" />
-          <p className="text-sm text-text-muted mt-2 italic">
-            行程規劃中⋯敬請期待！
-          </p>
-        </PaperCard>
+        {/* Day 3 */}
+        <Link href="/day/3" className="block" id="home-day3-card">
+          <PaperCard color="mint" rotation={-0.8} delay={0.25}>
+            <WashiTape color="blue" position="top-center" width="w-16" />
+            <DayHeader day={3} date="04/26（日）" subtitle="自由活動日" />
+            {/* Day 3 preview image */}
+            <div className="my-3 rounded-lg overflow-hidden shadow-sm">
+              <Image
+                src={withBasePath("/images/free-day.png")}
+                alt="自由活動日水彩插畫"
+                width={400}
+                height={200}
+                className="w-full h-32 object-cover"
+              />
+            </div>
+            <div className="text-sm text-text-dark font-medium mb-2">
+              <Sparkles className="w-3.5 h-3.5 inline -mt-0.5 mr-1 text-accent-blue" />
+              自由探索首爾！
+            </div>
+            <ItineraryList
+              items={[
+                "沒有固定行程，自由逛逛",
+                "明洞、北村韓屋村、弘大商圈",
+                "探索特色咖啡廳",
+                "路邊韓式小吃巡禮",
+              ]}
+            />
+          </PaperCard>
+        </Link>
 
-        {/* Day 4 placeholder */}
-        <PaperCard color="pink" rotation={1.2} delay={0.35}>
-          <WashiTape color="yellow" position="top-left" width="w-14" />
-          <DayHeader day={4} date="04/27（一）" subtitle="待安排" />
-          <p className="text-sm text-text-muted mt-2 italic">
-            行程規劃中⋯敬請期待！
-          </p>
-        </PaperCard>
+        {/* Day 4 */}
+        <Link href="/day/4" className="block" id="home-day4-card">
+          <PaperCard color="pink" rotation={1.2} delay={0.35}>
+            <WashiTape color="yellow" position="top-left" width="w-14" />
+            <DayHeader day={4} date="04/27（一）" subtitle="EGG DROP · AQUAFIELD 汗蒸幕" />
+            {/* Day 4 preview image */}
+            <div className="my-3 rounded-lg overflow-hidden shadow-sm">
+              <Image
+                src={withBasePath("/images/korean-spa.png")}
+                alt="韓式汗蒸幕水彩插畫"
+                width={400}
+                height={200}
+                className="w-full h-32 object-cover"
+              />
+            </div>
+            <div className="text-sm text-text-dark font-medium mb-2">
+              <Bath className="w-3.5 h-3.5 inline -mt-0.5 mr-1 text-accent-blue" />
+              放鬆日！
+            </div>
+            <ItineraryList
+              items={[
+                "EGG DROP 早午餐（10:00）",
+                "Starfield 百貨 AQUAFIELD",
+                "多間特色汗蒸室體驗",
+                "商場逛逛 + 超市",
+                "整理行李準備回家",
+              ]}
+            />
+          </PaperCard>
+        </Link>
 
         {/* Day 5 */}
-        <PaperCard color="blue" rotation={-1.8} delay={0.45} className="md:col-span-2 md:max-w-md md:mx-auto">
-          <WashiTape color="lavender" position="top-right" width="w-20" />
-          <DayHeader
-            day={5}
-            date="04/28（二）"
-            subtitle="回程日"
-          />
-          <ItineraryList
-            items={[
-              "11:00 退房",
-              "自由活動、最後衝刺",
-              "16:30 前往仁川機場",
-              "19:45 搭華航 BR159 回家",
-            ]}
-          />
-        </PaperCard>
+        <Link href="/day/5" className="block md:col-span-2 md:max-w-md md:mx-auto" id="home-day5-card">
+          <PaperCard color="blue" rotation={-1.8} delay={0.45}>
+            <WashiTape color="lavender" position="top-right" width="w-20" />
+            <DayHeader
+              day={5}
+              date="04/28（二）"
+              subtitle="弘大逛逛 · 回程"
+            />
+            {/* Day 5 preview image */}
+            <div className="my-3 rounded-lg overflow-hidden shadow-sm">
+              <Image
+                src={withBasePath("/images/hongdae-street.png")}
+                alt="弘大商圈水彩插畫"
+                width={400}
+                height={200}
+                className="w-full h-32 object-cover"
+              />
+            </div>
+            <div className="text-sm text-text-dark font-medium mb-2">
+              <Luggage className="w-3.5 h-3.5 inline -mt-0.5 mr-1 text-accent-orange" />
+              回家囉！
+            </div>
+            <ItineraryList
+              items={[
+                "11:00 退房、寄放行李",
+                "弘大最後逛街",
+                "中餐廳 甜蜜蜜（13:00）",
+                "~16:00 搭機場快線",
+                "19:45 搭長榮 BR159 回家 ✈",
+              ]}
+            />
+          </PaperCard>
+        </Link>
       </section>
 
       {/* Footer note */}

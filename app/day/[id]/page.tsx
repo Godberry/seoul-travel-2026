@@ -14,6 +14,12 @@ import {
   Star,
   Camera,
   Coffee,
+  Sparkles,
+  ShoppingBag,
+  Luggage,
+  Plane,
+  Bath,
+  Soup,
 } from "lucide-react";
 
 /* ---- Day content data ---- */
@@ -40,6 +46,27 @@ const days: Record<
     subtitle: "韓服 · 景福宮 · 安國站 · 廣藏市場",
     color: "green",
     content: <Day2Content />,
+  },
+  "3": {
+    title: "DAY 3",
+    date: "04/26（日）",
+    subtitle: "自由活動日",
+    color: "mint",
+    content: <Day3Content />,
+  },
+  "4": {
+    title: "DAY 4",
+    date: "04/27（一）",
+    subtitle: "EGG DROP · AQUAFIELD 汗蒸幕",
+    color: "pink",
+    content: <Day4Content />,
+  },
+  "5": {
+    title: "DAY 5",
+    date: "04/28（二）",
+    subtitle: "弘大逛逛 · 回程",
+    color: "blue",
+    content: <Day5Content />,
   },
 };
 
@@ -289,6 +316,282 @@ function Day2Content() {
         <p className="font-semibold">棉被只賣到 18:00，建議先逛這區！</p>
         <p className="mt-1">逛完後可前往布帳馬車一條街</p>
       </InfoCard>
+    </div>
+  );
+}
+
+/* ======= DAY 3 ======= */
+function Day3Content() {
+  return (
+    <div className="space-y-8">
+      {/* Free day illustration */}
+      <div className="rounded-xl overflow-hidden shadow-md">
+        <Image
+          src={withBasePath("/images/free-day.png")}
+          alt="首爾自由活動日水彩插畫"
+          width={800}
+          height={450}
+          className="w-full h-52 object-cover"
+        />
+      </div>
+
+      {/* Free day message */}
+      <PaperCard color="mint" rotation={-0.5} delay={0.05}>
+        <WashiTape color="lavender" position="top-left" width="w-20" />
+        <div className="flex items-center gap-2 mb-3">
+          <Sparkles className="w-5 h-5 text-accent-blue" />
+          <h3 className="font-heading font-bold text-lg text-accent-blue">
+            自由活動日
+          </h3>
+        </div>
+        <p className="text-sm text-text-muted leading-relaxed">
+          今天沒有固定行程，大家可以自由探索首爾！可以去逛逛明洞、北村韓屋村、弘大商圈，或者找一間咖啡廳悠閒地度過一天。
+        </p>
+        <div className="mt-4 bg-white/60 rounded-lg p-4">
+          <p className="text-sm font-semibold text-text-dark mb-2">
+            💡 推薦活動
+          </p>
+          <ul className="text-sm text-text-muted space-y-1.5 list-disc list-inside">
+            <li>逛明洞購物街，搜刮美妝好物</li>
+            <li>到北村韓屋村拍美照</li>
+            <li>探索弘大周邊的潮流小店</li>
+            <li>去一間特色咖啡廳放鬆</li>
+            <li>嚐試路邊的韓式小吃</li>
+          </ul>
+        </div>
+      </PaperCard>
+
+      {/* Tips */}
+      <InfoCard
+        title="小提醒"
+        variant="info"
+        icon={<MapPin className="w-4 h-4 text-accent-blue" />}
+      >
+        <p>自由活動也別忘了確認交通卡餘額，以及留意回飯店的路線！</p>
+        <p className="mt-1">
+          可善用 Naver Map 導航，迷路了就用 Papago 問路 😊
+        </p>
+      </InfoCard>
+    </div>
+  );
+}
+
+/* ======= DAY 4 ======= */
+function Day4Content() {
+  return (
+    <div className="space-y-8">
+      {/* Timeline */}
+      <PaperCard color="pink" rotation={0.5} delay={0.05}>
+        <WashiTape color="yellow" position="top-left" width="w-20" />
+        <h3 className="font-heading font-bold text-lg text-accent-blue mb-4">
+          時間安排
+        </h3>
+        <div className="relative">
+          <TimelineItem time="10:00" title="早午餐：EGG DROP">
+            <p>今天睡晚一點～起來吃個美味的蛋沙拉吐司！</p>
+          </TimelineItem>
+          <TimelineItem time="移動" title="搭車前往三松站">
+            <p>橘線三松站 4 號出口，前往 Starfield 百貨</p>
+          </TimelineItem>
+          <TimelineItem time="下午" title="AQUAFIELD 汗蒸幕">
+            <p>體驗韓式汗蒸幕，放鬆身心！</p>
+          </TimelineItem>
+          <TimelineItem time="晚間" title="晚餐 + 逛商場">
+            <p>在商場內隨意用餐，有超市可以逛</p>
+          </TimelineItem>
+          <TimelineItem time="回飯店" title="整理行李" isLast>
+            <p>今天要稍微整理一下行李！</p>
+          </TimelineItem>
+        </div>
+      </PaperCard>
+
+      {/* AQUAFIELD details */}
+      <PaperCard color="blue" rotation={-1} delay={0.15}>
+        <WashiTape color="pink" position="top-right" width="w-16" />
+        <div className="flex items-center gap-2 mb-3">
+          <Bath className="w-5 h-5 text-accent-blue" />
+          <h3 className="font-heading font-bold text-lg text-accent-blue">
+            AQUAFIELD 汗蒸幕
+          </h3>
+        </div>
+        {/* Spa illustration */}
+        <div className="rounded-lg overflow-hidden shadow-sm mb-3">
+          <Image
+            src={withBasePath("/images/korean-spa.png")}
+            alt="韓式汗蒸幕水彩插畫"
+            width={800}
+            height={450}
+            className="w-full h-44 object-cover"
+          />
+        </div>
+        <div className="text-sm text-text-dark space-y-3">
+          <p className="text-text-muted leading-relaxed">
+            位於 Starfield 百貨內的高級汗蒸幕設施，是一個結合 SPA
+            與休閒的放鬆天堂。
+          </p>
+          <div className="grid grid-cols-2 gap-3">
+            <div className="bg-white/60 rounded-lg p-3 text-center">
+              <p className="text-2xl mb-1">🧖‍♀️</p>
+              <p className="text-xs text-text-muted">多間特色汗蒸室</p>
+              <p className="text-xs font-semibold">雲室、火汗房、冰室</p>
+            </div>
+            <div className="bg-white/60 rounded-lg p-3 text-center">
+              <p className="text-2xl mb-1">♨️</p>
+              <p className="text-xs text-text-muted">溫泉 SPA</p>
+              <p className="text-xs font-semibold">露天溫泉與室內 SPA</p>
+            </div>
+            <div className="bg-white/60 rounded-lg p-3 text-center">
+              <p className="text-2xl mb-1">🌿</p>
+              <p className="text-xs text-text-muted">香氛浴池</p>
+              <p className="text-xs font-semibold">放鬆身心的芬芳體驗</p>
+            </div>
+            <div className="bg-white/60 rounded-lg p-3 text-center">
+              <p className="text-2xl mb-1">🍜</p>
+              <p className="text-xs text-text-muted">館內食堂</p>
+              <p className="text-xs font-semibold">肚子餓可以先吃一點</p>
+            </div>
+          </div>
+        </div>
+      </PaperCard>
+
+      {/* EGG DROP info */}
+      <PaperCard color="yellow" rotation={0.8} delay={0.25}>
+        <WashiTape color="mint" position="top-center" width="w-14" />
+        <div className="flex items-center gap-2 mb-3">
+          <UtensilsCrossed className="w-5 h-5 text-accent-orange" />
+          <h3 className="font-heading font-bold text-base text-accent-orange">
+            EGG DROP 🥚
+          </h3>
+        </div>
+        <p className="text-sm text-text-muted leading-relaxed">
+          韓國超人氣蛋沙拉吐司店！酥脆的吐司搭配滑嫩的炒蛋，再加上特製醬料，是韓國早餐的經典選擇。飯店周邊就有分店，非常方便！
+        </p>
+      </PaperCard>
+
+      {/* Reminder */}
+      <InfoCard
+        title="珈蓉自由活動日"
+        variant="info"
+        icon={<Star className="w-4 h-4 text-accent-blue" />}
+      >
+        <p>今天珈蓉自由活動，可以自行安排想去的地方。</p>
+        <p className="mt-1 font-semibold text-accent-red">
+          晚上記得整理行李，明天就要回家囉！
+        </p>
+      </InfoCard>
+    </div>
+  );
+}
+
+/* ======= DAY 5 ======= */
+function Day5Content() {
+  return (
+    <div className="space-y-8">
+      {/* Timeline */}
+      <PaperCard color="blue" rotation={-0.5} delay={0.05}>
+        <WashiTape color="lavender" position="top-left" width="w-20" />
+        <h3 className="font-heading font-bold text-lg text-accent-blue mb-4">
+          時間安排
+        </h3>
+        <div className="relative">
+          <TimelineItem time="08:30" title="隨意早餐 or 睡到飽">
+            <p>最後一天，不趕行程，悠閒起床～</p>
+          </TimelineItem>
+          <TimelineItem time="11:00" title="退房、寄放行李">
+            <p>在飯店櫃台寄放行李，輕裝出門</p>
+          </TimelineItem>
+          <TimelineItem time="12:00" title="弘大逛逛">
+            <p>最後的逛街採購時間！</p>
+          </TimelineItem>
+          <TimelineItem time="13:00" title="中餐：甜蜜蜜">
+            <p>中式餐廳，吃頓暖心的午餐</p>
+          </TimelineItem>
+          <TimelineItem time="~16:00" title="回飯店拿行李">
+            <p>搭機場快線前往仁川機場</p>
+          </TimelineItem>
+          <TimelineItem time="~17:00" title="抵達機場" isLast>
+            <p>辦理登機、免稅店最後衝刺！</p>
+          </TimelineItem>
+        </div>
+      </PaperCard>
+
+      {/* Hongdae */}
+      <PaperCard color="pink" rotation={1} delay={0.15}>
+        <WashiTape color="blue" position="top-right" width="w-16" />
+        <div className="flex items-center gap-2 mb-3">
+          <ShoppingBag className="w-5 h-5 text-accent-red" />
+          <h3 className="font-heading font-bold text-lg text-accent-red">
+            弘大逛逛
+          </h3>
+        </div>
+        {/* Hongdae illustration */}
+        <div className="rounded-lg overflow-hidden shadow-sm mb-3">
+          <Image
+            src={withBasePath("/images/hongdae-street.png")}
+            alt="弘大商圈水彩插畫"
+            width={800}
+            height={450}
+            className="w-full h-44 object-cover"
+          />
+        </div>
+        <p className="text-sm text-text-muted leading-relaxed">
+          弘大是首爾最具活力的年輕人聚集地，滿滿的潮流小店、美妝店、獨立品牌和街頭藝術。最後一天把握時間逛街購物，帶些紀念品回家！
+        </p>
+      </PaperCard>
+
+      {/* Restaurant */}
+      <PaperCard color="green" rotation={-0.8} delay={0.25}>
+        <WashiTape color="yellow" position="top-left" width="w-14" />
+        <div className="flex items-center gap-2 mb-3">
+          <Soup className="w-5 h-5 text-accent-orange" />
+          <h3 className="font-heading font-bold text-base text-accent-orange">
+            中餐廳：甜蜜蜜 🍲
+          </h3>
+        </div>
+        <p className="text-sm text-text-muted leading-relaxed">
+          在首爾吃一頓中式料理！甜蜜蜜是弘大附近受歡迎的中餐廳，旅行最後一天來碗熱騰騰的湯麵或炒飯，暖暖胃再出發去機場。
+        </p>
+      </PaperCard>
+
+      {/* Departure info */}
+      <InfoCard
+        title="回程航班資訊"
+        variant="warning"
+        icon={<Plane className="w-4 h-4 text-accent-orange" />}
+      >
+        <div className="space-y-1.5">
+          <p>
+            <strong>航班：</strong>長榮航空 BR159
+          </p>
+          <p>
+            <strong>起飛時間：</strong>19:45 仁川 ICN → 桃園 TPE
+          </p>
+          <p>
+            <strong>建議到機場時間：</strong>16:30
+          </p>
+          <p className="mt-2 text-accent-red font-semibold">
+            ✈ 旅途愉快，我們回家啦！
+          </p>
+        </div>
+      </InfoCard>
+
+      {/* Luggage reminder */}
+      <PaperCard color="lavender" rotation={0.5} delay={0.35}>
+        <WashiTape color="mint" position="top-center" width="w-18" />
+        <div className="flex items-center gap-2 mb-3">
+          <Luggage className="w-5 h-5 text-accent-blue" />
+          <h3 className="font-heading font-bold text-base text-accent-blue">
+            出發前檢查清單
+          </h3>
+        </div>
+        <div className="text-sm text-text-muted space-y-1.5">
+          <p>☑ 護照、手機、錢包</p>
+          <p>☑ 確認行李沒有超重（託運 23kg）</p>
+          <p>☑ 韓國退稅單據</p>
+          <p>☑ 交通卡退餘額或留作紀念</p>
+          <p>☑ 暈機藥上飛機前 1 小時吃</p>
+        </div>
+      </PaperCard>
     </div>
   );
 }
