@@ -1,6 +1,7 @@
 import { PillHeader } from "../components/PillHeader";
 import { EntryCard } from "../components/EntryCard";
-import { ShoppingBag } from "lucide-react";
+import { ShoppingBag, BadgePercent, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default function ShoppingPage() {
   return (
@@ -32,6 +33,27 @@ export default function ShoppingPage() {
           delay={0.12}
         />
       </div>
+
+      {/* Tax Refund highlight banner */}
+      <Link
+        href="/shopping/tax-refund"
+        className="mt-6 md:mt-8 group block rounded-2xl border-l-4 border-accent-blue bg-white/80 hover:bg-white shadow-sm hover:shadow-md transition-all p-4 md:p-5"
+      >
+        <div className="flex items-center gap-4">
+          <div className="shrink-0 w-11 h-11 rounded-full bg-accent-blue/10 flex items-center justify-center">
+            <BadgePercent className="w-5 h-5 text-accent-blue" />
+          </div>
+          <div className="flex-1 min-w-0">
+            <h3 className="font-heading font-bold text-base md:text-lg text-accent-red">
+              韓國退稅指南
+            </h3>
+            <p className="text-xs md:text-sm text-text-muted leading-snug mt-0.5">
+              滿 15,000 韓元就能退稅 · 結帳前先看流程與注意事項
+            </p>
+          </div>
+          <ArrowRight className="shrink-0 w-5 h-5 text-accent-blue transition-transform group-hover:translate-x-1" />
+        </div>
+      </Link>
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { PillHeader } from "../components/PillHeader";
 import { PaperCard } from "../components/PaperCard";
 import { WashiTape } from "../components/WashiTape";
@@ -16,6 +17,8 @@ import {
   Bus,
   TrainFront,
   CreditCard,
+  BadgePercent,
+  ArrowRight,
 } from "lucide-react";
 
 const preTripTasks = [
@@ -316,6 +319,23 @@ export default function PreparationPage() {
                 建議帶萬用轉接頭 1～2 個
               </li>
             </ul>
+          </InfoCard>
+
+          <InfoCard
+            title="購物退稅"
+            icon={<BadgePercent className="w-4 h-4 text-accent-blue" />}
+          >
+            <ul className="space-y-1.5">
+              <li>單筆滿 <span className="font-semibold text-text-dark">15,000 韓元</span> 即可退稅，上限 600,000 韓元</li>
+              <li>結帳時主動說「<span className="font-mono">Tax Free, please</span>」並出示護照即可現場退</li>
+              <li className="text-accent-red font-semibold">退稅商品不可拆封，留好收據與單據</li>
+            </ul>
+            <Link
+              href="/shopping/tax-refund"
+              className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-accent-blue hover:underline"
+            >
+              查看完整退稅指南 <ArrowRight className="w-3 h-3" />
+            </Link>
           </InfoCard>
 
           <InfoCard
