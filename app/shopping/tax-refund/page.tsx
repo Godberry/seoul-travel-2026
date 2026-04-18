@@ -183,32 +183,38 @@ export default function TaxRefundPage() {
           <div className="flex items-center gap-2 mb-3">
             <Plane className="w-5 h-5 text-accent-blue" />
             <h3 className="font-heading font-bold text-base text-accent-red">
-              方式 3 · 機場退稅
+              方式 3 · 機場退稅（仁川 T1）
             </h3>
           </div>
 
-          <div className="space-y-3 text-sm text-text-dark">
-            <div className="rounded-lg bg-white/70 p-3">
-              <p className="font-heading font-bold text-accent-blue mb-1.5">
-                🟢 退稅金 &lt; 75,000 韓元
-              </p>
-              <ol className="list-decimal list-inside space-y-1 text-text-muted">
-                <li>Check-in 後直接前往自動退稅機台掃描單據</li>
-                <li>通過安檢後，於登機口附近退稅櫃台領取現金</li>
-              </ol>
-            </div>
-
-            <div className="rounded-lg bg-white/70 p-3 border-l-4 border-accent-red/60">
-              <p className="font-heading font-bold text-accent-red mb-1.5">
-                🔴 退稅金 ≥ 75,000 韓元
-              </p>
-              <ol className="list-decimal list-inside space-y-1 text-text-muted">
-                <li>先到航空公司櫃台領登機證、行李過秤、貼封條（先別託運）</li>
-                <li>帶著行李前往海關櫃台 → 海關檢查商品後代為託運</li>
-                <li>通過安檢後，於登機口附近退稅櫃台領取退稅金</li>
-              </ol>
-            </div>
+          <div className="rounded-lg bg-white/70 p-3 mb-3 border-l-4 border-accent-blue/60 text-sm text-text-dark leading-relaxed">
+            <p className="flex items-start gap-2">
+              <CheckCircle2 className="w-4 h-4 text-accent-blue shrink-0 mt-0.5" />
+              <span>
+                我們這趟的退稅金額{" "}
+                <span className="font-semibold">應該不會超過 75,000 韓元</span>
+                ，所以只要在仁川 T1 機場找
+                <span className="font-semibold text-accent-red">
+                  自助退稅機
+                </span>
+                掃描單據領現金就好，不需要走海關查驗流程。
+              </span>
+            </p>
           </div>
+
+          <p className="text-sm text-text-muted leading-relaxed">
+            完整仁川 T1 退稅流程、機台位置、各航廈差異請參考這篇攻略：
+          </p>
+
+          <a
+            href="https://www.funliday.com/posts/incheon-airport-tax-refund/"
+            target="_blank"
+            rel="noreferrer"
+            className="mt-3 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-blue text-white text-sm font-heading font-bold shadow-sm hover:bg-accent-blue/90 transition-colors"
+          >
+            <Plane className="w-4 h-4" />
+            Funliday · 仁川機場退稅攻略
+          </a>
         </PaperCard>
       </section>
 
