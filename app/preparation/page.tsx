@@ -22,6 +22,14 @@ import {
   Banknote,
   Pill,
   Flame,
+  Wallet,
+  Calculator,
+  Users,
+  Feather,
+  Backpack,
+  ShoppingBag,
+  Lightbulb,
+  AlertTriangle,
 } from "lucide-react";
 
 const preTripTasks = [
@@ -98,8 +106,35 @@ export default function PreparationPage() {
         />
       </div>
 
+      {/* Jump-to-section chips */}
+      <p className="text-center text-xs text-text-muted mt-8 mb-3 tracking-[0.25em]">
+        — 本頁目錄 —
+      </p>
+      <nav
+        aria-label="章節目錄"
+        className="flex flex-wrap justify-center gap-2"
+      >
+        {[
+          { href: "#prep-start", label: "出發前", icon: ClipboardList },
+          { href: "#budget", label: "預算", icon: Wallet },
+          { href: "#apps", label: "APP", icon: Smartphone },
+          { href: "#luggage", label: "打包", icon: Luggage },
+          { href: "#transport", label: "交通", icon: Bus },
+          { href: "#life", label: "生活規定", icon: Zap },
+        ].map(({ href, label, icon: Icon }) => (
+          <a
+            key={href}
+            href={href}
+            className="inline-flex items-center gap-1.5 bg-white/70 hover:bg-white text-text-dark text-xs font-medium px-3 py-1.5 rounded-full shadow-sm hover:shadow transition-all border border-bg-cream-dark/60"
+          >
+            <Icon className="w-3.5 h-3.5 text-accent-blue" />
+            {label}
+          </a>
+        ))}
+      </nav>
+
       {/* Pre-trip checklist */}
-      <section className="mt-10 space-y-6">
+      <section id="prep-start" className="mt-10 space-y-6 scroll-mt-20">
         <h2 className="font-heading text-xl font-bold text-accent-blue flex items-center gap-2">
           <ClipboardList className="w-5 h-5" />
           出發前要完成
@@ -170,8 +205,166 @@ export default function PreparationPage() {
         </InfoCard>
       </section>
 
+      {/* Cash budget planning */}
+      <section id="budget" className="mt-10 space-y-6 scroll-mt-20">
+        <h2 className="font-heading text-xl font-bold text-accent-blue flex items-center gap-2">
+          <Wallet className="w-5 h-5" />
+          該帶多少台幣？
+        </h2>
+
+        <p className="text-sm text-text-muted leading-relaxed">
+          以下試算給你當起點，每人依自己的吃喝購物習慣自由調整。重點：
+          <span className="font-semibold text-text-dark">
+            WOWPASS 機台只收 NT$1,000 與 NT$500，且不找零
+          </span>
+          ，所以台幣建議全部帶千元鈔。
+        </p>
+
+        <PaperCard color="green" rotation={-0.5} delay={0.05}>
+          <WashiTape color="yellow" position="top-center" width="w-24" />
+          <h3 className="font-heading font-bold text-base text-accent-red mb-3 flex items-center gap-1.5">
+            <Calculator className="w-4 h-4" />
+            每日消費試算（首爾行情）
+          </h3>
+
+          <div className="overflow-hidden rounded-lg border border-bg-cream-dark">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="bg-white/70">
+                  <th className="text-left py-2 px-3 font-semibold text-text-dark">
+                    項目
+                  </th>
+                  <th className="text-right py-2 px-3 font-semibold text-text-dark">
+                    每日 KRW
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-bg-cream-dark">
+                <tr>
+                  <td className="py-2 px-3 text-text-dark">餐食 3 餐</td>
+                  <td className="py-2 px-3 text-right font-mono text-text-dark">
+                    40,000–60,000
+                  </td>
+                </tr>
+                <tr>
+                  <td className="py-2 px-3 text-text-dark">交通（地鐵 + 公車）</td>
+                  <td className="py-2 px-3 text-right font-mono text-text-dark">
+                    5,000–8,000
+                  </td>
+                </tr>
+                <tr>
+                  <td className="py-2 px-3 text-text-dark">
+                    零食 · 便利商店 · 小吃
+                  </td>
+                  <td className="py-2 px-3 text-right font-mono text-text-dark">
+                    10,000–20,000
+                  </td>
+                </tr>
+                <tr className="bg-white/50">
+                  <td className="py-2 px-3 font-semibold text-text-dark">
+                    每日小計
+                  </td>
+                  <td className="py-2 px-3 text-right font-mono font-bold text-accent-red">
+                    60,000–90,000
+                  </td>
+                </tr>
+                <tr className="bg-accent-blue/10">
+                  <td className="py-2 px-3 font-semibold text-text-dark">
+                    5 日合計
+                  </td>
+                  <td className="py-2 px-3 text-right font-mono font-bold text-accent-blue">
+                    30–45 萬 KRW
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p className="text-xs mt-3 text-text-muted italic">
+            換算台幣約{" "}
+            <span className="font-semibold not-italic text-text-dark">
+              NT$7,000–10,000
+            </span>
+            ，匯率參考 1 TWD ≈ 44.78 KRW（WOWPASS 機台現金匯率）
+          </p>
+        </PaperCard>
+
+        <PaperCard color="blue" rotation={0.8} delay={0.12}>
+          <WashiTape color="pink" position="top-right" width="w-18" />
+          <h3 className="font-heading font-bold text-base text-accent-red mb-3 flex items-center gap-1.5">
+            <Users className="w-4 h-4" />
+            三種旅人對照，自己選一種
+          </h3>
+          <div className="space-y-2.5">
+            <div className="bg-white/70 rounded-lg p-3">
+              <div className="flex items-center gap-2 mb-1">
+                <Feather className="w-4 h-4 text-accent-blue shrink-0" />
+                <p className="font-semibold text-text-dark">輕量型</p>
+                <span className="font-heading text-sm font-bold text-accent-red ml-auto whitespace-nowrap">
+                  NT$6,000–8,000
+                </span>
+              </div>
+              <p className="text-xs text-text-muted pl-6">吃喝簡單、不買伴手禮</p>
+            </div>
+            <div className="bg-white/70 rounded-lg p-3">
+              <div className="flex items-center gap-2 mb-1">
+                <Backpack className="w-4 h-4 text-accent-blue shrink-0" />
+                <p className="font-semibold text-text-dark">標準型</p>
+                <span className="font-heading text-sm font-bold text-accent-red ml-auto whitespace-nowrap">
+                  NT$8,000–10,000
+                </span>
+              </div>
+              <p className="text-xs text-text-muted pl-6">
+                正常吃喝、帶少量伴手禮回家
+              </p>
+            </div>
+            <div className="bg-white/70 rounded-lg p-3">
+              <div className="flex items-center gap-2 mb-1">
+                <ShoppingBag className="w-4 h-4 text-accent-blue shrink-0" />
+                <p className="font-semibold text-text-dark">重度型</p>
+                <span className="font-heading text-sm font-bold text-accent-red ml-auto whitespace-nowrap">
+                  NT$10,000–12,000+
+                </span>
+              </div>
+              <p className="text-xs text-text-muted pl-6">
+                逛市場購物、愛買伴手禮、常吃街邊小吃
+              </p>
+            </div>
+          </div>
+        </PaperCard>
+
+        <InfoCard
+          title="決定金額前的 3 個重點"
+          icon={<Lightbulb className="w-4 h-4 text-accent-blue" />}
+        >
+          <ul className="space-y-1.5">
+            <li>
+              WOWPASS 機台
+              <span className="font-semibold text-text-dark">
+                只收 NT$1,000 與 NT$500，不找零
+              </span>
+              {" → "}建議全部換成千元鈔帶出門
+            </li>
+            <li>
+              飯店、百貨、美妝等
+              <span className="font-semibold text-text-dark">
+                大筆消費建議刷卡
+              </span>
+              （海外回饋），不占這筆 WOWPASS 額度
+            </li>
+            <li>
+              韓元現金不必預先換太多，
+              <span className="font-semibold text-text-dark">
+                到首爾再從 WOWPASS 提領約 10 萬
+              </span>
+              就夠應付市場小攤
+            </li>
+          </ul>
+        </InfoCard>
+      </section>
+
       {/* Recommended apps */}
-      <section className="mt-10 space-y-6">
+      <section id="apps" className="mt-10 space-y-6 scroll-mt-20">
         <h2 className="font-heading text-xl font-bold text-accent-blue flex items-center gap-2">
           <Smartphone className="w-5 h-5" />
           建議下載 APP
@@ -236,7 +429,7 @@ export default function PreparationPage() {
       </section>
 
       {/* Packing list */}
-      <section className="mt-10 space-y-6">
+      <section id="luggage" className="mt-10 space-y-6 scroll-mt-20">
         <h2 className="font-heading text-xl font-bold text-accent-blue flex items-center gap-2">
           <Luggage className="w-5 h-5" />
           行李打包清單
@@ -283,7 +476,7 @@ export default function PreparationPage() {
       </section>
 
       {/* Transport tips */}
-      <section className="mt-10 space-y-6">
+      <section id="transport" className="mt-10 space-y-6 scroll-mt-20">
         <h2 className="font-heading text-xl font-bold text-accent-blue flex items-center gap-2">
           <Bus className="w-5 h-5" />
           韓國交通注意事項
@@ -328,10 +521,10 @@ export default function PreparationPage() {
       </section>
 
       {/* Preparation notices - Power */}
-      <section className="mt-10 space-y-6">
+      <section id="life" className="mt-10 space-y-6 scroll-mt-20">
         <h2 className="font-heading text-xl font-bold text-accent-blue flex items-center gap-2">
           <Zap className="w-5 h-5" />
-          生活注意事項
+          生活 & 攜帶規定
         </h2>
 
         <div className="space-y-4">
@@ -366,6 +559,14 @@ export default function PreparationPage() {
               查看完整退稅指南 <ArrowRight className="w-3 h-3" />
             </Link>
           </InfoCard>
+
+          <div className="flex items-center gap-2 pt-3 pb-0.5">
+            <AlertTriangle className="w-4 h-4 text-accent-red shrink-0" />
+            <h3 className="font-heading text-sm font-bold text-accent-red tracking-wide">
+              攜帶規定（2026 新制請留意）
+            </h3>
+            <div className="flex-1 h-px bg-bg-cream-dark/60" />
+          </div>
 
           <InfoCard
             title="日本常見藥品不能帶入韓國"
