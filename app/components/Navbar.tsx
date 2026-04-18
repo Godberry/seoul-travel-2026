@@ -10,6 +10,7 @@ const links = [
   { href: "/flight-hotel", label: "航班住宿" },
   { href: "/preparation", label: "行前準備" },
   { href: "/shopping", label: "購物攻略" },
+  { href: "/local-tips", label: "當地須知" },
   { href: "/day/1", label: "Day 1" },
   { href: "/day/2", label: "Day 2" },
   { href: "/day/3", label: "Day 3" },

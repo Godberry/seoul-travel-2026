@@ -14,6 +14,8 @@ import {
   CreditCard,
   Zap,
   Train,
+  Droplets,
+  ScanFace,
 } from "lucide-react";
 
 export default function FlightHotelPage() {
@@ -134,6 +136,33 @@ export default function FlightHotelPage() {
             </li>
           </ul>
         </InfoCard>
+
+        <InfoCard
+          title="隨身液體規定"
+          icon={<Droplets className="w-4 h-4 text-accent-orange" />}
+          variant="warning"
+        >
+          <ul className="space-y-1.5 mt-1">
+            <li className="flex items-start gap-2">
+              <span className="text-accent-orange font-bold mt-0.5 shrink-0">•</span>
+              <span>
+                <span className="font-semibold text-text-dark">單瓶 ≤ 100ml</span>（超過 100ml 容器即使沒裝滿也會被扣）
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-accent-orange font-bold mt-0.5 shrink-0">•</span>
+              <span>
+                所有液體裝進 <span className="font-semibold text-text-dark">1 個 1 公升透明夾鏈袋</span>，過安檢時單獨取出
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-accent-orange font-bold mt-0.5 shrink-0">•</span>
+              <span>
+                超過容量的化妝水、乳液、防曬、噴霧請<span className="font-semibold text-text-dark">放托運</span>
+              </span>
+            </li>
+          </ul>
+        </InfoCard>
       </section>
 
       {/* Hotel section */}
@@ -221,11 +250,11 @@ export default function FlightHotelPage() {
         </InfoCard>
       </section>
 
-      {/* e-Arrival info */}
+      {/* Entry & Exit info */}
       <section className="mt-12 space-y-6">
         <h2 className="font-heading text-xl font-bold text-accent-blue flex items-center gap-2">
           <CreditCard className="w-5 h-5" />
-          入境資料
+          入境 · 出境
         </h2>
 
         <PaperCard color="mint" rotation={0.8} delay={0.1}>
@@ -262,6 +291,26 @@ export default function FlightHotelPage() {
             仁川機場可現場辦理 SES 自動通關，但現場狀況不一定，建議仍先填好電子入境資料。
           </p>
         </InfoCard>
+
+        <PaperCard color="blue" rotation={-0.6} delay={0.18}>
+          <WashiTape color="yellow" position="top-right" width="w-18" />
+          <h3 className="font-heading font-bold text-base text-accent-red mb-3 flex items-center gap-1.5">
+            <ScanFace className="w-4 h-4" />
+            回程用 ICN SmartPass（出境人臉辨識）
+          </h3>
+          <ol className="list-decimal list-inside space-y-1.5 text-sm text-text-dark">
+            <li>
+              下載 <span className="font-semibold">ICN SmartPass</span> App，完成護照與人臉辨識註冊
+            </li>
+            <li>航班起飛當天走 SmartPass 專用通道</li>
+            <li>
+              系統自動辨識，<span className="font-semibold">不需出示護照與登機證</span>
+            </li>
+          </ol>
+          <p className="text-xs mt-3 text-text-muted italic">
+            建議 04/27 晚上在飯店 Wi-Fi 下先註冊好
+          </p>
+        </PaperCard>
       </section>
     </div>
   );

@@ -19,6 +19,9 @@ import {
   CreditCard,
   BadgePercent,
   ArrowRight,
+  Banknote,
+  Pill,
+  Flame,
 } from "lucide-react";
 
 const preTripTasks = [
@@ -138,6 +141,32 @@ export default function PreparationPage() {
               </a>
             </div>
           </div>
+        </InfoCard>
+
+        <InfoCard
+          title="現金與小鈔準備"
+          icon={<Banknote className="w-4 h-4 text-accent-blue" />}
+        >
+          <ul className="space-y-1.5 mt-1">
+            <li className="flex items-start gap-2">
+              <span className="text-accent-orange font-bold mt-0.5 shrink-0">•</span>
+              <span>
+                在台灣先換少量韓幣，應付<span className="font-semibold text-text-dark">第一天交通與用餐</span>
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-accent-orange font-bold mt-0.5 shrink-0">•</span>
+              <span>
+                到首爾再用台幣或美金換匯，<span className="font-semibold text-text-dark">明洞、弘大、東大門</span>換錢所匯率比機場好
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-accent-orange font-bold mt-0.5 shrink-0">•</span>
+              <span>
+                備一些 <span className="font-semibold text-text-dark">1,000、5,000 韓元小鈔</span>，傳統市場、路邊小吃、部分計程車仍偏好收現金
+              </span>
+            </li>
+          </ul>
         </InfoCard>
       </section>
 
@@ -336,6 +365,44 @@ export default function PreparationPage() {
             >
               查看完整退稅指南 <ArrowRight className="w-3 h-3" />
             </Link>
+          </InfoCard>
+
+          <InfoCard
+            title="日本常見藥品不能帶入韓國"
+            icon={<Pill className="w-4 h-4 text-accent-orange" />}
+            variant="warning"
+          >
+            <ul className="space-y-1.5">
+              <li>
+                EVE 止痛藥等<span className="font-semibold text-text-dark">含特定成分的日本市售藥</span>在韓國屬管制品
+              </li>
+              <li>若有從日本帶入的止痛、感冒藥，出發前再查一次成分表</li>
+              <li className="font-semibold text-text-dark">
+                慢性病藥請帶原包裝，並備好英文處方說明
+              </li>
+            </ul>
+          </InfoCard>
+
+          <InfoCard
+            title="暖暖包不能託運"
+            icon={<Flame className="w-4 h-4 text-accent-orange" />}
+            variant="warning"
+          >
+            <div className="inline-flex items-center gap-1.5 mb-3 px-2.5 py-1 rounded-full bg-accent-red/10 border border-accent-red/30">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-red animate-pulse" />
+              <span className="font-heading text-xs font-bold text-accent-red tracking-wide">
+                2026.1 新規上路
+              </span>
+            </div>
+            <ul className="space-y-1.5">
+              <li>
+                拋棄式、充電式暖暖包<span className="font-semibold text-text-dark">一律禁止託運</span>
+              </li>
+              <li>只能放隨身行李（手提）帶上飛機</li>
+              <li className="text-text-muted italic text-xs">
+                4 月下旬首爾氣溫約 10–20°C，這次多半用不到；若真要帶記得放手提
+              </li>
+            </ul>
           </InfoCard>
 
           <InfoCard
