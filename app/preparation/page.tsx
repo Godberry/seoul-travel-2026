@@ -517,6 +517,25 @@ export default function PreparationPage() {
               <li>電梯主要提供老弱婦孺使用</li>
             </ul>
           </InfoCard>
+
+          <InfoCard
+            title="計程車 · Kakao T"
+            icon={<Smartphone className="w-4 h-4 text-accent-blue" />}
+          >
+            <p className="leading-relaxed">
+              韓國叫車首選 <span className="font-semibold text-text-dark">Kakao T</span>
+              ，免韓文也能輸入中文地址叫車、線上刷卡，半夜或帶小孩移動時特別方便。
+            </p>
+            <a
+              href="https://www.funliday.com/posts/2026-korea-taxi-kakaot/"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-accent-blue hover:underline"
+            >
+              Funliday · Kakao T 叫車攻略
+              <ArrowRight className="w-3.5 h-3.5" />
+            </a>
+          </InfoCard>
         </div>
       </section>
 
