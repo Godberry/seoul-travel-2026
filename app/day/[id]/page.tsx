@@ -110,7 +110,12 @@ function Day1Content() {
             <p>凌晨從士林出發前往桃園機場</p>
           </TimelineItem>
           <TimelineItem time="05:00" title="抵達桃園機場">
-            <p>建議 05:00 到達，辦理登機手續</p>
+            <ItineraryList
+              items={[
+                "建議 05:00 到達，辦理登機手續",
+                "kkday 領 wowpass 卡（3 樓 Ezfly 飛買家櫃檯 · 05:30 開櫃）",
+              ]}
+            />
           </TimelineItem>
           <TimelineItem time="07:30" title="搭機出發">
             <p>長榮航空 BR170 · 桃園 → 仁川</p>
@@ -118,7 +123,6 @@ function Day1Content() {
           <TimelineItem time="11:00" title="抵達仁川機場">
             <ItineraryList
               items={[
-                "kkday 領 wowpass 卡（3 樓 Ezfly 飛買家櫃檯）",
                 "機場線買票可刷信用卡",
                 "搭 AREX 普通車到孔德站（約 66 分鐘）",
               ]}

@@ -9,6 +9,7 @@ const links = [
   { href: "/", label: "行程總覽" },
   { href: "/flight-hotel", label: "航班住宿" },
   { href: "/preparation", label: "行前準備" },
+  { href: "/shopping", label: "購物攻略" },
   { href: "/day/1", label: "Day 1" },
   { href: "/day/2", label: "Day 2" },
   { href: "/day/3", label: "Day 3" },
@@ -46,7 +47,7 @@ export function Navbar() {
               key={link.href}
               href={link.href}
               id={`nav-${link.href.replace(/\//g, "-").replace(/^-/, "")}`}
-              className={`nav-link text-sm ${pathname === link.href ? "active" : ""}`}
+              className={`nav-link text-sm ${pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href + "/")) ? "active" : ""}`}
             >
               {link.label}
             </Link>
@@ -77,7 +78,7 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className={`nav-link text-sm ${pathname === link.href ? "active" : ""}`}
+                className={`nav-link text-sm ${pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href + "/")) ? "active" : ""}`}
               >
                 {link.label}
               </Link>
