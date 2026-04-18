@@ -12,6 +12,7 @@ import {
   Shirt,
   Droplets,
   Zap,
+  BatteryCharging,
   Bus,
   TrainFront,
   CreditCard,
@@ -314,6 +315,46 @@ export default function PreparationPage() {
               <li className="font-semibold text-text-dark">
                 建議帶萬用轉接頭 1～2 個
               </li>
+            </ul>
+          </InfoCard>
+
+          <InfoCard
+            title="行動電源新規"
+            icon={<BatteryCharging className="w-4 h-4 text-accent-orange" />}
+            variant="warning"
+          >
+            <div className="inline-flex items-center gap-1.5 mb-3 px-2.5 py-1 rounded-full bg-accent-red/10 border border-accent-red/30">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-red animate-pulse" />
+              <span className="font-heading text-xs font-bold text-accent-red tracking-wide">
+                2026.3.27 新規上路
+              </span>
+            </div>
+            <ul className="space-y-1.5">
+              <li>
+                外殼必須標示{" "}
+                <span className="font-heading font-bold text-accent-red">
+                  Wh
+                </span>
+                ，只有 mAh 可能被拒帶
+              </li>
+              <li>
+                容量{" "}
+                <span className="font-heading font-bold text-text-dark">
+                  100Wh 以下
+                </span>
+                ，每人最多{" "}
+                <span className="font-heading font-bold text-text-dark">
+                  2 顆
+                </span>
+              </li>
+              <li className="text-accent-red font-semibold">
+                嚴禁托運，只能隨身攜帶
+              </li>
+              <li className="font-semibold text-text-dark">
+                機上禁止使用與充電（不可插機艙 USB）
+              </li>
+              <li>每顆單獨裝透明夾鏈袋，USB 接孔貼絕緣膠帶</li>
+              <li>放座位前方椅袋，不可放頭頂行李櫃</li>
             </ul>
           </InfoCard>
         </div>
