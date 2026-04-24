@@ -13,9 +13,9 @@ import {
   MapPin,
   ShoppingBag,
   UtensilsCrossed,
-  Sparkles,
   Bath,
   Luggage,
+  Trees,
 } from "lucide-react";
 
 export default function Home() {
@@ -145,27 +145,33 @@ export default function Home() {
         <Link href="/day/3" className="block" id="home-day3-card">
           <PaperCard color="mint" rotation={-0.8} delay={0.25}>
             <WashiTape color="blue" position="top-center" width="w-16" />
-            <DayHeader day={3} date="04/26（日）" subtitle="自由活動日" />
+            <DayHeader
+              day={3}
+              date="04/26（日）"
+              subtitle="kkday 一日遊：南怡島、江村鐵路自行車、晨靜樹木園"
+            />
             {/* Day 3 preview image */}
             <div className="my-3 rounded-lg overflow-hidden shadow-sm">
               <Image
-                src={withBasePath("/images/free-day.png")}
-                alt="自由活動日水彩插畫"
+                src={withBasePath("/images/nami-island.jpg")}
+                alt="南怡島水杉林道水彩插畫"
                 width={400}
                 height={200}
                 className="w-full h-32 object-cover"
               />
             </div>
             <div className="text-sm text-text-dark font-medium mb-2">
-              <Sparkles className="w-3.5 h-3.5 inline -mt-0.5 mr-1 text-accent-blue" />
-              自由探索首爾！
+              <Trees className="w-3.5 h-3.5 inline -mt-0.5 mr-1 text-accent-blue" />
+              近郊一日遊！
             </div>
             <ItineraryList
               items={[
-                "沒有固定行程，自由逛逛",
-                "明洞、北村韓屋村、弘大商圈",
-                "探索特色咖啡廳",
-                "路邊韓式小吃巡禮",
+                "06:50 弘大 8 號出口集合",
+                "09:30 南怡島（冬季戀歌拍攝地）",
+                "13:30 江村鐵路自行車",
+                "15:00 晨靜樹木園",
+                "18:40 回到弘大站",
+                "晚餐：新村孔陵一隻雞（暫定）",
               ]}
             />
           </PaperCard>
